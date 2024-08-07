@@ -39,7 +39,7 @@ public class DemoPrimitive {
 
     double d1 = 3.3; // by default 3.3 is double value
     double d2 = 3.3d; // "d" is to describe 3.3 is a double value
-    // float f1 = 3.3; // float is a lower level type than double, as double is a higher level type
+    //float f1 = 3.3; // float is a lower level type than double, as double is a higher level type
     float f2 = 3.3f; // if assign to float, 3.3 has to come with suffix f
 
     double d3 = 3.3f; // 3.3f is a float value, can promote to double as assigning
