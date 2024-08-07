@@ -42,7 +42,6 @@ public class JavaQuest3 {
       }
     } else {
       System.out.println("Invalid input");
-      return;
     }
 
 
@@ -105,6 +104,6 @@ public class JavaQuest3 {
         // otherwise the February should have 28 days only
         // how about other months, December?
     }
-    // 
+    System.out.println(monthOfName + " " + year + " has " + number_Of_DaysInMonth + " days");
   }
 }

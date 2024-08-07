@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class Demoif {
   public static void main(String[] args) {
@@ -108,15 +107,16 @@ public class Demoif {
     }
 
     // Exmample 7
-    String s = "abc";
-    char[] sToChar = s.toCharArray();
-    char[] reverseArray = new char[sToChar.length];
+    String s = "abcdef";
+    String[] array = s.split("");
+    int sIndex = array.length - 1;
+    String[] reverseArray = new String[array.length];
 
-    for (char c : sToChar) {
-      reverseArray[sToChar.length - 1] = c;
-      
+    for (String c: array) {
+      reverseArray[sIndex] = c;
+      sIndex -= 1;
     }
-    String reverseString = new String(reverseArray);
+    String reverseString = String.join("", reverseArray);
     System.out.println(reverseString);
 
 
