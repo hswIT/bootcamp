@@ -119,6 +119,9 @@ public class Demoif {
     String reverseString = String.join("", reverseArray);
     System.out.println(reverseString);
 
+    // Answer from Vincent
+
+
 
 
     // Example 8
@@ -128,7 +131,7 @@ public class Demoif {
     // 3. OR Divisible by 400
     // e.g 1900 is not a leap year, 2000 & 2004 is a leap year
 
-    int year = 2003;
+    int year = 1900;
 
     if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
       System.out.println(year + " is a leap year");
@@ -154,7 +157,7 @@ public class Demoif {
 
     // Example 10
     double totalPurchase = 100.0;
-    int discount;
+    double discount = 0.0;
     double amountToPay;
 
     if (totalPurchase >= 500) {
@@ -207,6 +210,10 @@ public class Demoif {
     // It is a weak password if there is no special character
     // It is a weak password if length < 12
   }
-
+    // Test case thinking
+    // Admin1234567#
+    // Admin1234#
+    // Admin 12345
+    // Admin123456789
 }
 
