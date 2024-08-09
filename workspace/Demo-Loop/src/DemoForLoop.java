@@ -164,12 +164,25 @@ public class DemoForLoop {
     // for loop
     // don't use indexOf() and contains()
     // found or not found
-    // String s6 = "abcdefghik";
-    // String subString = "def";
 
-    // for (int i = 0; i < subString.length(); i++){
 
-    // }
+    String s6 = "abcdefghik";
+    String subString = "def";
+
+    for (int i = 0; i < s6.length(); i++) {
+      if (s6.charAt(i) == subString.charAt(0)) { // first character match 
+        if (s6.substring(i, i + subString.length()) == subString) { // substring is matched
+          System.out.println("Example 11 Found");
+          break; 
+        } else { // substring not matched
+          System.out.println("Example 11 Not found");
+        }
+      } else { // no first character matched
+        System.err.println("Example 11 Not found");
+        break; 
+      }
+    }
+
 
 
 
@@ -237,5 +250,29 @@ public class DemoForLoop {
       nextRow += 1;
       System.out.println("");
     }
+
+    // Example 17
+    // ******
+    // ****
+    // **
+
+
+    // Challenge (Continue)
+    String searchMe = "peter piper picked a peck of pickled peppers";
+    int num = 0;
+
+    for (int i = 0; i < searchMe.length(); i++) {
+      // if (searchMe.charAt(i) != 'p') {
+      //   continue; 
+      // } 
+      // num++;
+
+      if (searchMe.charAt(i) == 'p') {
+        num++; 
+      } 
+    }
+    System.out.println("Found " + num + " p's in the string");
+
+    
   }
 }
