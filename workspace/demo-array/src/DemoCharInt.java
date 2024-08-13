@@ -61,18 +61,37 @@ public class DemoCharInt {
     System.out.println(c2); // え
     // Japanese -> 12352-12447
 
+    // overflow
     s = 77896; // 66535 + 12361
     char c4 = (char) s;
     System.out.println(c4); // OK, but overflow -> え
 
-    // Overflow
-    byte b1 = (byte) 128;
+    // int -> byte (Overflow)
+    byte b1 = (byte) 128; // 127 + 1 -> -128
     System.out.println(b1); // -128
     b1 = (byte) 129;
     System.out.println(b1); // -127
+    b1 = (byte) 384; // 127 + 256 
+    System.out.println(b1); // -128
 
     int asset = (int) 2_200_000_000L;
     // overflow
     System.out.println(asset); // -2094967296
+
+    // double -> int (precision loss)
+    double d10 =  10.25;
+    int x5 = (int) d10;
+    System.out.println(x5); // 10
+    d10 = 10.99;
+    x5 = (int) d10;
+    System.out.println(x5); // 10
+
+    // overflow + for loop (careless mistake)
+    // for (byte i = 0; i < 128; i++) overflow cause loop indefinitely
+
+    byte b20 = 7;
+    int i20 = 8;
+    boolean result = b20 < i20; //true
+
   }
 }
