@@ -1,6 +1,6 @@
 public class JavaQuest11 {
 
-// You are given a positive integer arrivalTime denoting the arrival time of a
+  // You are given a positive integer arrivalTime denoting the arrival time of a
   // train in hours,
   // and another positive integer delayedTime denoting the amount of delay in
   // hours.
@@ -13,17 +13,18 @@ public class JavaQuest11 {
   }
 
   public static int findDelayedArrivalTime(int arrivalTime, int delayedTime) {
-    
+
     int total = arrivalTime + delayedTime;
 
     if (total > 24) {
-      total = total - 24;    
-    } 
+      total = total - 24;
+    }
     if (total == 24) {
       total = 0;
-    } 
-    
-    System.out.println("Reach at " + arrivalTime + " + " + delayedTime + " = " + "(" + total + ":00) ");
+    }
+
+    System.out.println("Reach at " + arrivalTime + " + " + delayedTime + " = "
+        + "(" + total + ":00) ");
     return total;
   }
 }
