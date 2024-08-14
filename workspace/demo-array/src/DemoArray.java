@@ -233,11 +233,13 @@ public class DemoArray {
     arr16[1] = '\u0000';
     arr16[2] = ' ';
 
+
     if (arr16[0] == '\u0000') { // meaning that \u0000 is not equivalent to ' '
       System.out.println("Space");
     }
     if (arr16[0] == ' ') { // meaning that \u0000 is not equivalent to ' '
     System.out.println("Space character");
+    System.out.println(Arrays.toString(arr16));
   }
 
     System.out.println(Arrays.toString(arr16)); // 
@@ -247,13 +249,14 @@ public class DemoArray {
     arr17 = new String[4]; // create string array object in the heap memory
     // arr17 -> is called object reference (variable)
     arr17[2] = "ijk"; // create String object, and assign String address to one of the address inside the array 
-    System.out.println(Arrays.toString(arr17));
+    System.out.println("Answer arr17: " + Arrays.toString(arr17));
 
     // 2D array
     int[][] arr18 = new int[2][3]; // 2 row (index 0,1) and 3 column (index 0,1,2)
     arr18[1][1] = 100;
     arr18[1][2] = -99;
     arr18[0][1] = 1;
+    System.out.println("Answer arr18: " + Arrays.deepToString(arr18));
 
     // for loop -> access 20 array
     for (int i = 0; i < arr18.length; i++) { // row

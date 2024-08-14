@@ -2,8 +2,8 @@ public class Question3005 {
 
   public static void main(String[] args) {
 
-    int nums[] = {1,2,2,3,1,4};
-    int nums1[] = {1,2,3,4,5};
+    //int nums[] = {1,2,2,3,1,4};
+    int nums[] = {1,2,3,4,5};
 
     // count frequency
     int[] counts = new int[100]; // 0 - 99
@@ -24,6 +24,7 @@ public class Question3005 {
             totalCount += counts[i];
     }
     //return totalCount;
+    System.out.println(totalCount);
 
 
 
