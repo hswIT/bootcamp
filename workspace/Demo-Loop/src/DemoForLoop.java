@@ -273,6 +273,12 @@ public class DemoForLoop {
     }
     System.out.println("Found " + num + " p's in the string");
 
-    
+    // String
+    // char[], ASCII, int
+
+    // Method => 3 types
+    // 1. searching (contains, indexOf, lastIndexOf)
+    // 2. presentation (length, charAt, imEmpty, isBlank, substring,startsWith, endsWith)
+    // 3. transform (replace, trim, toLowerCase, toUpperCase)
   }
 }

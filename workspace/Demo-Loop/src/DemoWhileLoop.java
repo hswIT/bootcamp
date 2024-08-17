@@ -85,7 +85,15 @@ public class DemoWhileLoop {
     }
     System.out.println(sum); // 10
 
+    //
+    int num = 54321;
+    String result = "";
 
+    while (num > 0) {
+      result += num % 10; // retrieve, String + int, force int to concat with string to become string
+      num /= 10; // 54321 -> 5432
+    }
+    System.out.println(result);
     
 
     

@@ -1,6 +1,8 @@
 public class DemoForEachLoop {
   public static void main(String[] args) {
     // for loop
+    // able to access all elements during each iteration
+    // for-each => easy to read/use, because no index
     int[] arr = new int[] {2, 9, 10, -3};
     // i => array index, can make use of i to retrieve index
     for (int i = 0; i < arr.length; i++) {
@@ -26,5 +28,18 @@ public class DemoForEachLoop {
       }
     }
     
+    // default value - Wrapper Class / String
+    Integer x = null;
+    System.out.println(x); // null
+    // x.intValue(); // Error
+    
+    String s = null;
+    System.out.println(s); // null
+    // s.length(); // Error
+
+    s = ""; // empty is an String object
+    // s.charAt(0); // error, not NPE, StringIndexOutOfBoundsException:
+    System.out.println(s);
+
   }
 }

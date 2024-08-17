@@ -40,7 +40,7 @@ public class DemoStaticMethod {
     // default double type, cannot downcast to float 
     // System.out.println(sum(1.0, 7.0)); // double, double
 
-
+    // promotion take place
     System.out.println(sum(1L, 22L)); // long, long => double , double
     System.out.println(sum((byte) 1, (byte) 2)); // byte, byte =>  int , int
     System.out.println(sum(1.2f, 8.6f)); // float, float => double, double
@@ -85,6 +85,19 @@ public class DemoStaticMethod {
     return encrypted;
   }
 
+  public static String encrypt2(String password) {
+    char[] characters = password.toCharArray();
+    String encrypted = "";
+    int left = -1, right = -1;
+    for (int i = 0; i < characters.length; i++) {
+      left = characters[i] / 4;
+      right = characters[i] % 4;
+      encrypted += left + right;
+    }
+    // sum=17, result1 = 4, result2 = 1
+    return encrypted;
+  }
+
   public static String decrypt(String encrypted){
     char[] characters = encrypted.toCharArray();
     String original = "";
@@ -98,6 +111,7 @@ public class DemoStaticMethod {
   // Method signature = Method Name + No. of Parameters & Type of Parameters
   // Return type is not part of signature
   // can reuse the method name as long as they have different signatures
+  // Method name => start with verb
   public static int sum(int x, int y) {
     System.out.println("Method sum(int x, int y)");
     return (x + y);
