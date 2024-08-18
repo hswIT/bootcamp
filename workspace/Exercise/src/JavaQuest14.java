@@ -40,20 +40,25 @@ public class JavaQuest14 {
   // Code a method here to return true if the integer is palindrome, otherwise
   // false
   public static boolean palindrome(int num) {
-
+    
+    if (num < 0) {
+      return false;
+    }
     String str = Integer.toString(num);
     int[] arr = new int[str.length()];
     int[] reverseArr = new int[str.length()];
-    
+    // char[] arr = str.toCharArray();
+    // char[] reverseArr = new char[arr.length];
 
     for (int i = 0; i < arr.length; i++) {
       arr[i] = Math.abs(str.charAt(i) - 48); 
       reverseArr[arr.length - 1 - i] = Math.abs(str.charAt(i) - 48);
+      // reverseArr[arr.length - 1 - i] =  (char) Math.abs(arr[i]); //
     };
 
     System.out.println(Arrays.toString(arr));
     System.out.println(Arrays.toString(reverseArr));    // System.out.println(arr.toString());
-    return (Arrays.toString(arr)).equals(Arrays.toString(reverseArr)) ? true : false; // convert the array to string and then use equals
-    // return Arrays.equals(arr, reverseArr); // compare two arrays directly
+    // return (Arrays.toString(arr)).equals(Arrays.toString(reverseArr)) ? true : false; // convert the array to string and then use equals
+    return Arrays.equals(arr, reverseArr); // compare two arrays directly
   }
 }
