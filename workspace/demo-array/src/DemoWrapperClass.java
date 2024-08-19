@@ -54,7 +54,7 @@ public class DemoWrapperClass {
     b1 = new Boolean(true);
     b1 = new Boolean("false");
 
-    // 8 primiteive types + 8 wrapper classes + String
+    // 8 primitive types + 8 wrapper classes + String
     int[] arr = new int[] {2, 6, 10};
     Integer[] arr2 = new Integer[] {new Integer(2), new Integer(6), new Integer(10)};
     Integer[] arr3 = new Integer[] {2, 6, 10};

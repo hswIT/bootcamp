@@ -51,6 +51,7 @@ public class JavaQuest14 {
     // char[] reverseArr = new char[arr.length];
 
     for (int i = 0; i < arr.length; i++) {
+      //System.out.println(Math.abs(str.charAt(i)));
       arr[i] = Math.abs(str.charAt(i) - 48); 
       reverseArr[arr.length - 1 - i] = Math.abs(str.charAt(i) - 48);
       // reverseArr[arr.length - 1 - i] =  (char) Math.abs(arr[i]); //
