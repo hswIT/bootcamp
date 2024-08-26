@@ -1,9 +1,9 @@
 public class Student {
 
-  private static String schoolName = "ABC school";
+  private static String schoolName = "ABC school"; // outside the Student object
 
-  private String name;
-  private int age;
+  private String name; // inside the Student object
+  private int age; // inside the Student object
 
   public Student(String name, int age) {
     this.name = name;

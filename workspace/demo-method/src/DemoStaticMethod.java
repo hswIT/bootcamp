@@ -62,7 +62,7 @@ public class DemoStaticMethod {
 
 
   
-      // if inout is able to produce output, then is is a static method
+      // if inut is able to produce output, then is is a static method
   public static double calculateAreaForCircle(double radius) {
     //return radius * radius * Math.PI;
     return Math.pow(radius, 2.0) * Math.PI;
@@ -70,7 +70,7 @@ public class DemoStaticMethod {
   // if output type = String, then you must return String value inside the method
 
   // Static method
-  // encrypt("abc") similiar to System.out.println("abc");
+  // encrypt("abc") similar to System.out.println("abc");
 
   // instance method
   // "abc".charat(0) -> object presentation

@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 // one to many
 public class Order {
+  private static int count = 0;
+
   private int id; // system generate id
   private Item[] items; // attribute, one to many
   private String currency; // one to one
@@ -14,6 +16,7 @@ public class Order {
   // }
 
   public Order() { // constructor
+    this.id = getID();
     this.items = new Item[0];
   }
 
@@ -32,6 +35,11 @@ public class Order {
   public void setItems(Item[] items) {
     this.items = items;
   }
+
+  public static int getID(){
+    return ++count;
+  }
+
 
   public Item[] getItems() {
     return this.items;
