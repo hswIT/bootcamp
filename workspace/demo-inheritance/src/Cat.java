@@ -3,9 +3,11 @@ public class Cat extends Animal{
 
   // empty constructor
   public Cat(){
+    super(); // implicitly call the parent empty constructor
   }
 
   public Cat(String color){
+    super(); // implicitly call the parent empty constructor
     this.color = color;
   }
 
@@ -24,8 +26,12 @@ public void setColor(String color){
   this.color = color;
 }
 
-  public void eat() {
-    System.out.println("Cat is eating ...");
+  // public void eat() { 
+  //   System.out.println("Cat is eating ...");
+  // }
+
+  public void run(){
+    this.eat();
   }
 
   public String toString(){
@@ -62,7 +68,10 @@ public void setColor(String color){
     // if there is NO eat() method in Cat.class
     cat3.eat(); // Animal is eating ...
     // Otherwise, it will call the eat() method in Cat class
-
+    cat3.run(); // Animal is eating ...
     
   }
 }
+// !!!!!!!! Note !!!!!!!
+// getAge() and getName() are REALLY inherited from the parent class
+// where attributes are not inherited but only accessible

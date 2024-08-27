@@ -11,6 +11,9 @@ public class DemoPassByReference {
     int temp = Integer.MIN_VALUE;
     int backup = -1;
 
+
+    // So, array is one of type that is "pass by reference"
+    // passing a copy of object address
     public static int[] moveMaxToTail(int[] arr) {
       for (int i = 0; i < arr.length - 1; i++) {
         temp = Math.max(arr[i], arr[i + 1]);
