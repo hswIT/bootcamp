@@ -28,6 +28,10 @@ public class Animal {
     System.out.println("Animal is eating ...");
   }
 
+  public void walk() {
+    System.out.println("Animal is walking ...");
+  }
+
   public static void main(String[] args) {
 
     Animal animal = new Animal(4, "Bagel");

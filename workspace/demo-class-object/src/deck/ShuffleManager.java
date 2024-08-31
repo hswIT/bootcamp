@@ -5,8 +5,10 @@ import java.util.Random;
 public class ShuffleManager {
   private Card[] cards;
 
-  public ShuffleManager(Card[] cards) {
-    this.cards = cards;
+
+  public ShuffleManager(SDeck sdeck) {
+    // check if all 52 objects exist, otherwise you may throw exception
+    this.cards = sdeck.getCards();
   }
 
   public Card[] getCards() {

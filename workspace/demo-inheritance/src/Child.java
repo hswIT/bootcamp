@@ -35,6 +35,7 @@ public class Child extends Parent{
     super.sleep(); // "super" here is something like parent object address
   }
 
+  @Override
   public void sleep() {
     super.sleep();
     System.out.println("something else after super.sleep() ...");
@@ -51,6 +52,32 @@ public class Child extends Parent{
     Child child3 = new Child(44);
     System.out.println(child3.getAge());
 
+    Child c = new Child(); 
+    Parent p = new Child(); // ok
+
+    c.run();
+    c.sleep();
+
+    p.sleep();
+    //p.run(); // compile error, p cannot call run()
+    // because the scope of object is determined by the type of object reference
+
+    Child c4 = (Child) p; // safe, Explicit downcasting
+    c4.run();
+    c4.sleep();
+
+    // On the other hand
+    Parent p2 = new Parent();
+    if (p2 instanceof Child) { // avoid the error
+      Child c5 = (Child) p2; // runtime error, java.lang.ClassCastException
+      c5.run();
+    }
+    
+    Parent p3 = new Child();  // p3 is now a reference to a Child object
+    if (p3 instanceof Child) {  // This will return true because p3 actually refers to a Child
+      Child c6 = (Child) p3;  // Safe downcast
+      c6.run();  // Now you can call methods specific to Child
+    }
   }
 }
 

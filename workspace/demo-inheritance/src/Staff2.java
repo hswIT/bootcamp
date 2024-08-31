@@ -33,7 +33,7 @@ public class Staff2 { // implicitly extends Object.class
     public boolean equals(Object obj){ // same String => true, otherwise => false
       if (this == obj)
         return true;
-      if !(obj instanceof Staff2) 
+      if (!(obj instanceof Staff2)) // before downcast, consider to use instanceof
         return false;
       
       // because we don't have staff object, so we cannot getName()
@@ -47,6 +47,16 @@ public class Staff2 { // implicitly extends Object.class
 
     @Override
     public int hashCode() {
-      return this.name.hashCode();
+      return Objects.hash(this.name, this.joinDate);
+    }
+
+    public static void main(String[] args) {
+      System.out
+          .println(new Staff2("John", LocalDate.of(2024, 1, 1)).equals(null)); // false
+      System.out.println(new Staff2("John", LocalDate.of(2024, 1, 1))
+          .equals(new Staff2("John", LocalDate.of(2024, 1, 1)))); // true
+      
+      System.out.println(new Staff2("John", LocalDate.of(2024, 1, 1)).hashCode()); // 75896887
+      System.out.println(new Staff2("John", LocalDate.of(2024, 1, 1)).hashCode()); // 75896887
     }
   }

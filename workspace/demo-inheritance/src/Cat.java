@@ -34,6 +34,11 @@ public void setColor(String color){
     this.eat();
   }
 
+  @Override
+  public void walk(){
+    System.out.println("Cat is walking ...");
+  }
+
   public String toString(){
     return "Cat(" 
       + "name=" + super.getName()
@@ -70,8 +75,15 @@ public void setColor(String color){
     // Otherwise, it will call the eat() method in Cat class
     cat3.run(); // Animal is eating ...
     
+    Animal cat4 = new Cat();
+    // cat4.run(); // error
+
+    cat4.walk(); // ok, "Cat is walking ...
+
+    Dog dog = new Dog();
+    dog.walk(); // Animal is walking ...
   }
 }
-// !!!!!!!! Note !!!!!!!
+// !!!!!!!!!!!!! NOTE !!!!!!!!!!!!!!!!!!!
 // getAge() and getName() are REALLY inherited from the parent class
 // where attributes are not inherited but only accessible
