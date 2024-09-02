@@ -7,8 +7,8 @@ public class DemoArrayList {
 
   public static void main(String[] args) {
     String[] arr = new String[]{"abc", "def", "ijk"};
-    System.out.println(arr.length);
-    arr[1] = "hello"; // similar to get()
+    System.out.println(arr.length); // get
+    arr[1] = "hello"; // similar to set()
     for (String s : arr) {
       System.out.println(s);
     }
@@ -170,6 +170,10 @@ public class DemoArrayList {
 
     long l = new Integer(3); // OK, Integer -> int -> long
     // Long l2 = new Integer(3); // NOT OK, Integer -> int -> long -> Long 
+    
+
+    int l1 = Short.valueOf((short) 3); // Short Object -> short -> int (upcast)
+    // Long l2 = 3; // int -> long -> Long object (NOT OK)
 
     ArrayList<Object> objects = new ArrayList<Object>();
 
@@ -208,6 +212,8 @@ public class DemoArrayList {
     String[] stringArray = strings2.toArray(new String[strings2.size()]);
     System.out.println(Arrays.toString(stringArray)); // [abc, def]
 
+
+    // !!!!!!!!!! NOTE !!!!!!!!!!!
     // Arrays.asList() -> return List object
     // Disadvantage: you cannot perform write operation.
     // arrayList.add("xyz");
@@ -225,6 +231,9 @@ public class DemoArrayList {
     // that implements the Collection interface
     arrayList4.add("hello");
     System.out.println(arrayList4); // [abc, def, ijk, hello]
+
+
+
 
   }
 }

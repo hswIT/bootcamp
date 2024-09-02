@@ -10,7 +10,7 @@ public class DemoPassByReference {
 
     int temp = Integer.MIN_VALUE;
     int backup = -1;
-
+  }
 
     // So, array is one of type that is "pass by reference"
     // passing a copy of object address
@@ -30,4 +30,4 @@ public class DemoPassByReference {
     }
 
   }
-}
+
