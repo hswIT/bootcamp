@@ -74,3 +74,15 @@
 - Child c1 = New Parent(); => downcasting, not 100% SAFE, c1(the instance of parent) may lack the properties and method to the Child
   - cannot assign or upcast a Parent object to the Child reference
 
+### Week 5
+
+## Data structure
+
+  - HashMap vs List
+    - HashMap.get() by key => for loop list, if value = key, return the object
+      - HashMap<String, String> e.g. urlMap (i.e. "AAPL", "www.apple.com")
+      - If we want to store more info about the "key" => HashMap<String, Company>
+      - Retain key object is wrapper class or String (equals(), hashCode() is ready)
+    - HashMap<Customer, List<Transaction>>
+      - If key is custom object, be careful of equals() and hashCode() => put(), get()
+

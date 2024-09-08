@@ -23,7 +23,24 @@ public class DemoLinkedList {
           return i;
         }
       }
-      return -1;
-      
-  }
+      return -1;  
+    }
+
+    // Total Time Complexity: O(n^2) + O(n) + O(1) -> O(n^2)
+    public static List<String> get(int[] arr) {
+      // Time Complexity -> O(n)
+      // O(n^2)
+      for (int i = 0; i < arr.length; i++) { // iteration n times
+        for (int j = 0; j < arr.length; j++) {
+        }
+      }
+      // O(n)
+      for (int i = 0; i < arr.length; i++) {
+
+      }
+      // O(1)
+      if (arr.length > 10)
+        return null;
+      return null;
+    }
 }

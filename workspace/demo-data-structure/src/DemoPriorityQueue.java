@@ -1,12 +1,15 @@
 
 
+import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class DemoPriorityQueue {
+public class DemoPriorityQueue{
+
+  public DemoPriorityQueue(StringDesc stringDesc) {};
 
   public static void main(String[] args) {
-    
+
     // For PriorityQueue, it is not first come first serve
     Queue<String> pq = new PriorityQueue<>(); // natural ordering of the elements
     pq.add("abc");
@@ -22,7 +25,28 @@ public class DemoPriorityQueue {
 
     // Custom order
     // Tips: Class for sorting (Comparator)
-    // Queue<String> pq2 = new PriorityQueue<>(...);
+    // Queue<String> pq2 =
+    //     new PriorityQueue<>(new StringDesc("Math"), new StringDesc("Science"),
+    //         new StringDesc("English"), new StringDesc("Chinese"));
+
+  
+
+    Queue<String> pq2 = new PriorityQueue<>(new StringDesc());
+    pq2.add("Science");
+    pq2.add("English");
+    pq2.add("Chinese");
+    pq2.add("Math");
+    System.out.println(pq2);
+
+    System.out.println(pq2.poll());
+    System.out.println(pq2.poll());
+    System.out.println(pq2.poll());
+    System.out.println(pq2.poll());
+
+    // Person.class (name, age), isElderly()
+    // PriorityQueue, Elderly always get first
+
+    
 
   }
 

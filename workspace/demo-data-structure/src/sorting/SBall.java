@@ -24,7 +24,7 @@ public class SBall implements Comparable<SBall> {
   @Override
   public int compareTo(SBall sb) {
     // Yellow(1) -> Green(2) -> Red(3)
-    int result = -1;
+    int result = 0;
     if (this.color.getValue() < sb.color.getValue())
       result = -1;
       // return -1;

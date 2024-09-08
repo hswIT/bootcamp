@@ -1,5 +1,6 @@
 package sorting.formula;
 
+
 import sorting.Box;
 
 public class BoxSortByIntAsc implements BoxSort {
