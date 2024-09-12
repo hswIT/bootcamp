@@ -7,6 +7,7 @@ public abstract class Account implements Creditable<Double>, Debitable<Double> {
     private double balance;
     private String accNo;
     private AccountType accountType;
+    // add attributes owner;
 
     protected Account(String prefix, AccountType accountType) {
       this.accNo = this.genAccNo(prefix);
@@ -39,6 +40,8 @@ public abstract class Account implements Creditable<Double>, Debitable<Double> {
     }
 
     public final void credit(Double amount) {
+    if (amount == null) 
+      amount = 0.0;
     double newBalance = BigDecimal.valueOf(this.getBalance()) //
         .add(BigDecimal.valueOf(amount)) //
         .doubleValue();
@@ -46,6 +49,8 @@ public abstract class Account implements Creditable<Double>, Debitable<Double> {
    }
 
     public final boolean debit(Double amount) {
+      if (amount == null) 
+        amount = 0.0;
       if (this.getBalance() < amount) {
         System.out.println("Insufficient Balance.");
         return false;

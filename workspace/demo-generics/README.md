@@ -1,18 +1,12 @@
-## Getting Started
+## Generics
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+### Generics Type can be written in Class level
+  - public class Box<T>
+  - the type of attribute be T
+  - instance method can be generic (public T getValue())
+  - At compile time
+  - At runtime, you have to define the exact type of T
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+### Generics Type can be written in static method level
+  - You have to define the range of the generic type in the method signature
+  - public static <T> Box<T> createBox(T value)
