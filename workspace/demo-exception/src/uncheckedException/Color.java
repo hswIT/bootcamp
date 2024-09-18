@@ -1,4 +1,4 @@
-package checkedException;
+package uncheckedException;
 public enum Color {
   RED('R'), GREEN('G'), BLUE('B'),;
 

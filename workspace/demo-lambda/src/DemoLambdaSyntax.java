@@ -25,6 +25,7 @@ public class DemoLambdaSyntax {
     MathOperation addition = (x, y) -> x + y; // match the signature of the functional interface, addition is instance1 of MathOperation
     MathOperation subtraction = (x, y) -> x - y; // subtraction is instance2 of MathOperation
 
+    // 可以理解為有分別兩個anonymous class分別去制造出兩個不同instance, 然後各自去define compute()內容
     System.out.println(addition.compute(3, 2));
     System.out.println(subtraction.compute(3, 2));
 
@@ -33,7 +34,8 @@ public class DemoLambdaSyntax {
     // 1. Need to add code block {}
     // 2. Need to use "return"
 
-    MathOperation process = (a, b) -> { // this is similar to write class
+    // MathOperation & StringManager are tailor-made functional interfaces
+    MathOperation process = (a, b) -> { // this is equivalent to instantiate an anonymous class and define the abstract method
       if (a > 10)
         return a + b;
       return a - b;

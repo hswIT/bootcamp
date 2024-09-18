@@ -1,4 +1,4 @@
-package checkedException;
+package uncheckedException;
 public class DivideByZero {
   public static void main(String[] args) {
     int x = 10 / 2;

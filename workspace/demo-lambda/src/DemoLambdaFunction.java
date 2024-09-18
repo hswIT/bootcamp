@@ -23,6 +23,9 @@ public class DemoLambdaFunction {
     Function<String, Integer> stringlength = str -> str.length(); // Formula, not execution
     System.out.println(stringlength.apply("Hello"));
 
+    Function<String, String> stringUpper = str -> str.toUpperCase();
+    System.out.println(stringUpper.apply("UpperCase test"));
+
     Function<Character, Boolean> charbool = c1 -> c1 == 'a';
     System.out.println(charbool.apply('b'));
 
@@ -112,7 +115,10 @@ public class DemoLambdaFunction {
     Predicate<Customer> isNameStartsWithA =
         customer -> customer.getName().startsWith("A");
 
-    System.out.println("test " + isAdult.and(isNameStartsWithA).test(new Customer(18, "Alex")));
+    Predicate<Customer> isLengthLessThanSix =
+    customer -> customer.getName().length() < 6;
+
+    System.out.println("test " + isAdult.and(isNameStartsWithA).and(isLengthLessThanSix).test(new Customer(18, "Alex")));
     System.out.println("test " + isAdult.and(isNameStartsWithA).test(new Customer(18, "Peter")));
     System.out.println("test " + isAdult.and(isNameStartsWithA).test(new Customer(19, "Peter")));
 
@@ -123,6 +129,8 @@ public class DemoLambdaFunction {
     // BiPredicate<Customer, Integer> isAdult2 = (customer, age) -> customer.getAge() >= age;
     // System.out.println(isAdult2.test(new Customer(18), 18));
     // System.out.println(isAdult2.test(new Customer(17), 18));
+
+    
 
     BiPredicate<Customer, Customer> isOlderThan =
         (c1, c2) -> c1.getAge() > c2.getAge();

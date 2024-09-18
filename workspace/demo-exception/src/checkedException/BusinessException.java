@@ -1,13 +1,13 @@
-package uncheckedException;
+package checkedException;
 // Once the class extends Exception, this class becomes Checked Exception class
 public class BusinessException extends Exception {
 
-  public static void main(String[] args) {
+  public static void main(String[] args)  {
    //BusinessException be = new BusinessException();
 
    try {
    calculate(19, 1);
-   } catch (BusinessException e) { // unhandled checked exception
+   } catch (BusinessException e) {
      System.out.println("business exception handled");
    }
   }

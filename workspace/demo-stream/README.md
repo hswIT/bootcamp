@@ -1,18 +1,32 @@
-## Getting Started
+#### Key Differences Between IntStream and Stream<Integer>
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+- 1. Data Types
 
-## Folder Structure
+      IntStream: Works with primitive int values.
+      Stream<Integer>: Works with Integer objects (wrapper class for int).
 
-The workspace contains two folders by default, where:
+- 2. Performance
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+      Boxing/Unboxing Overhead:
+          IntStream: No boxing/unboxing; operates directly on primitives.
+          Stream<Integer>: Requires boxing of int to Integer and unboxing back to int, which adds overhead.
+      Memory Efficiency:
+          IntStream: More memory-efficient due to the absence of object wrappers.
+          Stream<Integer>: Each Integer object consumes more memory than a primitive int.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- 3. Available Operations
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+      Specialized Methods:
+          IntStream: Methods like sum(), average(), max(), min() are available.
+          Stream<Integer>: Does not have these methods; you need to map to IntStream or use custom collectors.
+      Primitive-Specific Functional Interfaces:
+          IntStream: Uses IntPredicate, IntFunction, IntConsumer, etc.
+          Stream<Integer>: Uses standard Predicate<Integer>, Function<Integer, R>, Consumer<Integer>.
 
-## Dependency Management
+- 4. Use Cases
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+      IntStream: Preferred when working with sequences of primitive int values for mathematical computations or performance-critical applications.
+      Stream<Integer>: Used when you need to work with methods or APIs that require object types, or when dealing with collections that store Integer objects.
+
+### Remarks
+  - Optional would ONLY be used as return type but not as parameter

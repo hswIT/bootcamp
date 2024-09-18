@@ -26,25 +26,28 @@ public class DemoApplyLambdaFunction {
     Map<String, Integer> nameMap = new HashMap<>();
     nameMap.put("John", 30);
     nameMap.put("Peter", 7);
-    nameMap.computeIfAbsent("Betty", s -> 3); 
+    nameMap.computeIfAbsent("Betty", s -> 3); // computeIfAbsent() belong to Map interface
     System.out.println(nameMap.get("Betty")); // 3
     nameMap.computeIfAbsent("Betty", s -> 4); 
     System.out.println(nameMap.get("Betty")); // 3
 
 
-    nameMap.merge("Betty", 10, (original, multipler) -> original * multipler);
+    nameMap.merge("Betty", 10, (valueFromKey, newProvidedValue) -> valueFromKey * newProvidedValue);
     System.out.println(nameMap.get("Betty")); // 30
 
     nameMap.merge("Vincent", 10, (x1, x2) -> x1 * x2);
+    // if key is not in the map, it will be added to the map with the provided value
     System.out.println(nameMap.get("Vincent")); // 10
 
     nameMap.merge("Vincent", 20, (x1, x2) -> {
+    // if key is in the map but the associated value is null, the element will be removed
       if (x1 + x2 > 25)
         return null;
       return x1 + x2;
     });
 
     nameMap.put("Oscar", -1);
+    System.out.println(nameMap.get("Oscar")); // -1
 
     for (String key : nameMap.keySet()) {
       nameMap.merge(key, 2, (x1, x2) -> {

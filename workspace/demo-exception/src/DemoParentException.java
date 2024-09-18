@@ -5,9 +5,9 @@ public class DemoParentException {
   public static void main(String[] args) {
     try {
       Object obj[] = new Integer[3];
-      obj[2] = 10;
-      obj[2] = "stt";
-      // int x = 10 / 0; // Step 1
+      // obj[2] = 10;
+      // obj[2] = "stt";
+      int x = 10 / 0; // Step 1
       // "abc".charAt(3);
     } catch (StringIndexOutOfBoundsException e) { // Step 2
       System.out.println("Caught the StringIndexOutOfBoundsException");
